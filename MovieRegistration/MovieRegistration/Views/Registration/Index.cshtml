@@ -1,0 +1,40 @@
+﻿@model Movie
+
+
+
+
+@using (Html.BeginForm("Index", "Movie", FormMethod.Post))
+{
+
+    <div>
+        @Html.LabelFor(m => m.ID)
+        @Html.TextAreaFor(m => m.ID)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Title)
+        @Html.TextAreaFor(m => m.Title)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Genre)
+        @Html.TextAreaFor(m => m.Genre, new SelectList(Enum.GetValues(typeof(Genre))))
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Year)
+        @Html.TextAreaFor(m => m.Year)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Actors)
+        @Html.TextAreaFor(m => m.Actors)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Directors)
+        @Html.TextAreaFor(m => m.Directors)
+    </div>
+
+    <input type="submit" value="Submit" />
+}
